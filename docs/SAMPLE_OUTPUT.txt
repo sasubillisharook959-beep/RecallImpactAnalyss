@@ -1,0 +1,134 @@
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Recalled Batch: B101
+
+Affected Warehouses:
+  W1  (hop 1)
+  W2  (hop 1)
+Affected Hospitals:
+  H1  (hop 2)
+  H2  (hop 2)
+  H3  (hop 2)
+Total reachable nodes (incl. batch): 6
+Maximum hops from batch: 2
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: 
+========== CONNECTED CLUSTERS ==========
+Cluster 1 (6 nodes): B101, H1, H2, H3, W1, W2
+Cluster 2 (3 nodes): B102, H4, W3
+Cluster 3 (5 nodes): B103, H5, H6, W4, W5
+Cluster 4 (3 nodes): B104, H7, W6
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: 
+========== SUPPLY NETWORK (17 nodes, 13 shipments) ==========
+B101 (Batch) -> W1, W2
+W1 (Warehouse) -> H1, H2
+H1 (Hospital) -> 
+H2 (Hospital) -> 
+W2 (Warehouse) -> H3
+H3 (Hospital) -> 
+B102 (Batch) -> W3
+W3 (Warehouse) -> H4
+H4 (Hospital) -> 
+B103 (Batch) -> W4, W5
+W4 (Warehouse) -> H5
+H5 (Hospital) -> 
+W5 (Warehouse) -> H6
+H6 (Hospital) -> 
+B104 (Batch) -> W6
+W6 (Warehouse) -> H7
+H7 (Hospital) -> 
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: 
+========== PERFORMANCE COMPARISON ==========
+Network: 17 nodes, 13 edges | Queries: 5000
+Repeated BFS time:          1.086 ms  (O(V+E) per query)
+Union-Find build + queries: 0.052 ms  (O(E a(V)) build, O(a(V)) per query)
+BFS checksum: 21250 | DSU checksum: 5000
+Measured speed-up (BFS/DSU): 20.919x
+Note: BFS answers directed reachability; DSU answers undirected clustering.
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: 
+(Synthetic network: 2000 batches, 8000 warehouses, 20000 hospitals)
+========== PERFORMANCE COMPARISON ==========
+Network: 21068 nodes, 21998 edges | Queries: 2000
+Repeated BFS time:          14.334 ms  (O(V+E) per query)
+Union-Find build + queries: 0.450 ms  (O(E a(V)) build, O(a(V)) per query)
+BFS checksum: 19999 | DSU checksum: 2000
+Measured speed-up (BFS/DSU): 31.829x
+Note: BFS answers directed reachability; DSU answers undirected clustering.
+
+============================================
+   RECALL IMPACT ANALYSIS SYSTEM
+============================================
+1. Recall a batch (BFS)
+2. Find connected clusters (Union-Find)
+3. Display supply network
+4. Compare BFS vs Union-Find
+5. Trace delivery path (batch -> node)
+6. Traceback: which batches reached a node?
+7. Add a shipment
+8. Scale benchmark (synthetic network)
+9. Exit
+Enter choice: Exiting...

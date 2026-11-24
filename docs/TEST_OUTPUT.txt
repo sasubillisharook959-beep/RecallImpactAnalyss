@@ -1,0 +1,92 @@
+TEST 1: Recall B101 (two warehouses, three hospitals)
+Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Recalled Batch: B101
+Affected Warehouses:
+  W1  (hop 1)
+  W2  (hop 1)
+Affected Hospitals:
+  H1  (hop 2)
+  H2  (hop 2)
+  H3  (hop 2)
+Total reachable nodes (incl. batch): 6
+Maximum hops from batch: 2
+Exiting...
+
+TEST 2: Recall B103 (batch split across two warehouses)
+Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Recalled Batch: B103
+Affected Warehouses:
+  W4  (hop 1)
+  W5  (hop 1)
+Affected Hospitals:
+  H5  (hop 2)
+  H6  (hop 2)
+Total reachable nodes (incl. batch): 5
+Maximum hops from batch: 2
+Exiting...
+
+TEST 3: Lower-case input b104 is accepted
+Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Recalled Batch: B104
+Affected Warehouses:
+  W6  (hop 1)
+Affected Hospitals:
+  H7  (hop 2)
+Total reachable nodes (incl. batch): 3
+Maximum hops from batch: 2
+Exiting...
+
+TEST 4: Unknown batch B999
+Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Batch 'B999' not found. Known batches: B101 B102 B103 B104
+Exiting...
+
+TEST 5: Delivery path B101 to H3
+From batch: To node: Path (2 hops): B101 -> W2 -> H3
+Exiting...
+
+TEST 6: No path B102 to H1
+From batch: To node: No delivery path from B102 to H1.
+Exiting...
+
+TEST 7: Traceback of hospital H5
+Node (e.g. hospital): Batches that reached H5: B103
+Exiting...
+
+TEST 8: New shipment W2->H9 then recall B101
+From: To: Shipment added.
+Enter recalled batch: 
+========== RECALL IMPACT ANALYSIS ==========
+Recalled Batch: B101
+Affected Warehouses:
+  W1  (hop 1)
+  W2  (hop 1)
+Affected Hospitals:
+  H1  (hop 2)
+  H2  (hop 2)
+  H3  (hop 2)
+  H9  (hop 2)
+Total reachable nodes (incl. batch): 7
+Maximum hops from batch: 2
+Exiting...
+
+TEST 9: Duplicate shipment rejected
+From: To: Shipment already exists.
+Exiting...
+
+TEST 10: Shared warehouse merges clusters (B102->W1)
+From: To: Shipment added.
+========== CONNECTED CLUSTERS ==========
+Cluster 1 (9 nodes): B101, B102, H1, H2, H3, H4, W1, W2, W3
+Cluster 2 (5 nodes): B103, H5, H6, W4, W5
+Cluster 3 (3 nodes): B104, H7, W6
+Exiting...
+
+TEST 11: Non-numeric menu input does not crash
+Please enter a number from 1 to 9.
+Exiting...
+

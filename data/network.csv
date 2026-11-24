@@ -1,0 +1,14 @@
+source,type,target
+B101,Batch,W1
+W1,Warehouse,H1
+W1,Warehouse,H2
+B101,Batch,W2
+W2,Warehouse,H3
+B102,Batch,W3
+W3,Warehouse,H4
+B103,Batch,W4
+W4,Warehouse,H5
+B103,Batch,W5
+W5,Warehouse,H6
+B104,Batch,W6
+W6,Warehouse,H7
